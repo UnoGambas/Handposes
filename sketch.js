@@ -193,6 +193,7 @@ function draw() {
   if (!isStarted) {
     text('Click to start sound', margin, ty);
     ty += lineHeight * 1.5;
+
   }
 
   text('setlist:', margin, ty);
