@@ -71,16 +71,16 @@ function windowResized() {
 /* ---------- 스케일 & 오프셋 계산 ---------- */
 function updateScale() {
   const canvasAR = width / height;
-  const videoAR = vW / vH;  // 640/480 = 1.33
+  const videoAR = vW / vH;
 
-  if (canvasAR > videoAR) {        // 캔버스가 비디오보다 가로로 더 긴 경우 → 높이 맞춤, 좌우 크롭
-    s = height / vH;
-    offX = (width - vW * s) / 2;
-    offY = 0;
-  } else {                         // 캔버스가 비디오보다 세로로 더 긴 경우 → 폭 맞춤, 상하 크롭  
+  if (canvasAR > videoAR) {        // 가로가 더 긴 경우 → 상·하 크롭
     s = width / vW;
     offX = 0;
     offY = (height - vH * s) / 2;
+  } else {                         // 세로(모바일) → 좌·우 크롭
+    s = height / vH;
+    offX = (width - vW * s) / 2;
+    offY = 0;
   }
 }
 
