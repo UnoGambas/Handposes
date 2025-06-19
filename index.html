@@ -15,7 +15,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <script src="sketch.js"></script>
+      <style>
+    /* 로딩 오버레이 */
+    #loader{
+      position:fixed; inset:0;
+      background:#0d0d0d; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      font-family:Pretendard,sans-serif; color:#fff; z-index:1000;
+    }
+    /* 프로그레스 바 */
+    #bar-wrap{
+      width:60%; height:12px; background:#333; border-radius:6px;
+      overflow:hidden; margin-top:16px;
+    }
+    #bar{
+      width:0%; height:100%;
+      background:linear-gradient(90deg,#1e90ff,#00e0ff);
+    }
+  </style>
   </head>
   <body>
+    <div id="loader">
+    <div id="percent">0%</div>
+    <div id="bar-wrap"><div id="bar"></div></div>
+  </div>
   </body>
   </html>
